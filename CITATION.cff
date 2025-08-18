@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "EEGVERSE: A Unified, BIDS-Native Hub for Cross-Domain EEG Benchmarks"
+message: "If you use EEGVERSE, please cite this work."
+type: software
+authors:
+  - family-names: YourLast
+    given-names: YourFirst
+version: "0.3.0"
+repository-code: "https://github.com/yourname/eegverse"
+license: MIT
+preferred-citation:
+  type: article
+  authors:
+    - family-names: YourLast
+      given-names: YourFirst
+  title: "EEGVERSE: A Unified, BIDS-Native Hub for Cross-Domain EEG Benchmarks"
+  year: 2025
+  journal: "arXiv"
+  doi: ""

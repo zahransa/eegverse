@@ -1,0 +1,34 @@
+name: Update Leaderboard
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - "results/*.json"
+      - "scripts/update_leaderboard.py"
+permissions:
+  contents: write
+concurrency:
+  group: leaderboard
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run leaderboard script
+        run: |
+          python scripts/update_leaderboard.py || true
+      - name: Commit changes (if any)
+        run: |
+          if ! git diff --quiet -- LEADERBOARD.md; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add LEADERBOARD.md
+            git commit -m "ci: auto-update leaderboard"
+            git push
+          else
+            echo "No leaderboard changes."

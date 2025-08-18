@@ -1,0 +1,11 @@
+eegverse_data/
+eegverse_raw/
+results/
+figures/
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.ipynb_checkpoints/
