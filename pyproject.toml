@@ -8,7 +8,7 @@ version = "0.3.0"
 description = "EEGVERSE: A Universe of Annotated EEG Data"
 readme = { file = "README.md", content-type = "text/markdown" }
 license = { file = "LICENSE" }
-authors = [{ name = "zahransa" }]  # <-- put your real name/email if you want
+authors = [{ name = "zahransa" }]  # put your real name/email if you want
 requires-python = ">=3.9"
 dependencies = [
   "numpy",
@@ -18,16 +18,9 @@ dependencies = [
   "mne-bids>=0.13",
   "scikit-learn",
   "pooch"
-  # NOTE: torch and openneuro-py are moved to optional extras below.
 ]
 
-# Optional extras so users can choose heavy deps
-[project.optional-dependencies]
-dl = ["torch"]                 # deep learning bits
-openneuro = ["openneuro-py"]   # OpenNeuro downloader
-dev = ["build", "twine", "pytest"]
-
-# Nice-to-have metadata
+# ✅ classifiers belong under [project], not in optional-dependencies
 classifiers = [
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
@@ -43,11 +36,15 @@ Homepage = "https://github.com/zahransa/eegverse"
 Repository = "https://github.com/zahransa/eegverse"
 Issues = "https://github.com/zahransa/eegverse/issues"
 
-# Tell setuptools what to package
+# ✅ extras are just dependency lists (PEP 508)
+[project.optional-dependencies]
+dl = ["torch"]
+openneuro = ["openneuro-py"]
+dev = ["build", "twine", "pytest"]
+
+# Package discovery
 [tool.setuptools.packages.find]
 include = ["eegverse*"]
 
-# Include non-code files inside the package if you add any later
 [tool.setuptools]
 include-package-data = true
-
