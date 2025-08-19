@@ -1,3 +1,8 @@
+[![PyPI version](https://img.shields.io/pypi/v/eegverse.svg)](https://pypi.org/project/eegverse/)
+[![Python](https://img.shields.io/pypi/pyversions/eegverse.svg)](https://pypi.org/project/eegverse/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+
 # 🧠 EEGVERSE
 *A Universe of Annotated EEG Data for Benchmarks & Reproducible Research*
 
